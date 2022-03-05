@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Spring Boot Kotlin Starter</title>
+  <link rel="icon" href="data:,">
+  <style>
+    label {
+      display: inline-block;
+      font-weight: bold;
+      width: 250px;
+    }
+  </style>
+</head>
+<body>
+<h1>Welcome</h1>
+<p><label>Application Version:</label> {{version}}</p>
+<p><label>Your IP:</label> {{ip}}</p>
+<p><label>Service IP:</label> {{service-ip}}</p>
+<p><label>Method:</label> {{ method }}</p>
+<p><label>Path:</label> {{ path }}</p>
+<p><label>Query:</label> {{ query }}</p>
+<h2>Headers</h2>
+{{#headers}}
+  <p><label>{{key}}:</label> {{value}}</p>
+{{/headers}}
+</body>
+</html>

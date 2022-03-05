@@ -1,0 +1,37 @@
+logging:
+  level:
+    de.mbur.acme: debug
+
+management:
+  endpoint:
+    health:
+      group:
+        readiness:
+          include: readinessState
+        liveness:
+          include: livenessState
+      probes:
+        enabled: true
+      show-components: when_authorized
+      show-details: when_authorized
+
+server:
+  compression:
+    enabled: true
+    mime-types:
+      - application/javascript
+      - application/json
+      - text/css
+      - text/html
+      - text/javascript
+      - text/plain
+      - text/xml
+    min-response-size: 1024
+  forward-headers-strategy: framework
+  http2:
+    enabled: true
+  port: 8080
+
+spring:
+  profiles:
+    active: ${profile:test}
